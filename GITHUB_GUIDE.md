@@ -2,6 +2,8 @@
 
 本文供首次克隆项目的开发者使用，覆盖环境准备、数据库初始化、密钥配置、前后端启动、构建验收与 GitHub 协作。项目为课程演示系统，不应直接承载真实患者数据或生产业务。
 
+公开源码仓库：[qowieqq1123/outpatient-management-system](https://github.com/qowieqq1123/outpatient-management-system)
+
 ## 1. 项目与目录
 
 本项目使用前后端分离的模块化单体架构：Spring Boot 提供 REST、JWT 与 STOMP WebSocket API；Vite 提供独立 SPA；MySQL 保存业务数据。
@@ -33,7 +35,7 @@
 ## 3. 首次克隆和数据库初始化
 
 ```bash
-git clone <GitHub 仓库地址>
+git clone https://github.com/qowieqq1123/outpatient-management-system.git
 cd outpatient-management-system
 ```
 
