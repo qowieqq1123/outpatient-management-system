@@ -1,0 +1,150 @@
+{
+  "base": "http://127.0.0.1:5174",
+  "baseline": "V1.7",
+  "viewports": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "checks": {
+    "RETRY_BEFORE_PAY": {
+      "title": "收费工作台",
+      "retryStat": false,
+      "retryBadge": null,
+      "retryNotice": null,
+      "retryButton": "确认收款",
+      "retrySettlement": "第 1 次 · 结算失败医保系统暂不可用2026-11-05 14:43:37",
+      "paidBadge": null,
+      "toast": null,
+      "selectedBill": "3"
+    },
+    "RETRY_BILL_AFTER_PAY": {
+      "billId": 3,
+      "status": "RETRY",
+      "paidAmount": 0,
+      "beforeSettlements": 1,
+      "afterSettlements": 2,
+      "newSettlements": [
+        {
+          "settlementId": 23,
+          "status": "FAILED",
+          "retryCount": 2,
+          "errorMsg": "医保系统暂不可用"
+        }
+      ]
+    },
+    "RETRY_AFTER_PAY": {
+      "title": "收费工作台",
+      "retryStat": true,
+      "retryBadge": "待重试",
+      "retryNotice": "医保结算未成功，单据保持「待重试」。医保系统暂不可用；处方仍为待收费，不得显示为收费成功。",
+      "retryButton": "重新结算",
+      "retrySettlement": "第 1 次 · 结算失败医保系统暂不可用2026-11-05 14:43:37",
+      "paidBadge": null,
+      "toast": "医保结算未成功，已保留待重试：医保系统暂不可用",
+      "selectedBill": "3"
+    },
+    "MOBILE_ROLE_PATIENT": {
+      "title": "患者工作台",
+      "nav": 5,
+      "panels": 5,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "实时队列已连接",
+      "bootVisible": false
+    },
+    "MOBILE_ROLE_NURSE": {
+      "title": "护士 · 分诊叫号台",
+      "nav": 4,
+      "panels": 5,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "实时队列已连接",
+      "bootVisible": false
+    },
+    "MOBILE_ROLE_DOCTOR": {
+      "title": "医生工作台",
+      "nav": 6,
+      "panels": 6,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "实时队列已连接",
+      "bootVisible": false
+    },
+    "MOBILE_ROLE_CASHIER": {
+      "title": "收费工作台",
+      "nav": 4,
+      "panels": 4,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "本地服务正常",
+      "bootVisible": false
+    },
+    "MOBILE_ROLE_PHARMACIST": {
+      "title": "药房工作台",
+      "nav": 3,
+      "panels": 2,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "本地服务正常",
+      "bootVisible": false
+    },
+    "MOBILE_ROLE_ADMIN": {
+      "title": "管理后台",
+      "nav": 6,
+      "panels": 6,
+      "stats": 4,
+      "viewportWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "moneyBad": 0,
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "appVisible": true,
+      "connection": "本地服务正常",
+      "bootVisible": false
+    },
+    "RUNTIME": {
+      "jsExceptions": [],
+      "severeLogs": []
+    }
+  },
+  "errors": [],
+  "fixtureCleanup": "PASS: fee_bill #3=RETRY, settlement #2=FAILED(retry_count=1), checkup #4=PENDING_FEE",
+  "passed": true
+}

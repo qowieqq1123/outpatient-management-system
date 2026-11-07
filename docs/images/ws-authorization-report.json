@@ -1,0 +1,432 @@
+{
+  "scenario": "AC-28 / WebSocket 患者专属主题授权与广播脱敏",
+  "baseline": "V1.7",
+  "generatedAt": "2026-11-06T15:28:45.307Z",
+  "apiBase": "http://127.0.0.1:8080",
+  "wsBase": "ws://127.0.0.1:8080/ws",
+  "wsOrigin": "http://127.0.0.1:5173",
+  "fixture": {
+    "suffix": "WS9253072D9A",
+    "userA": "wsaWS9253072D9A",
+    "userB": "wsbWS9253072D9A",
+    "patientNoA": "WSAWS9253072D9A",
+    "patientNoB": "WSBWS9253072D9A",
+    "timeSlot": "WS验收 WS9253072D9A",
+    "pidA": 1537,
+    "pidB": 1538,
+    "uidA": 1554,
+    "uidB": 1555,
+    "scheduleId": 74,
+    "regA": 1437,
+    "regB": 1438,
+    "workDate": "2026-12-16"
+  },
+  "cases": [
+    {
+      "name": "patient_a_own_masked_allowed",
+      "destination": "/topic/queue/1/2026-12-16/masked/1537",
+      "expectAllow": true,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": null,
+      "error": null,
+      "messages": [
+        {
+          "destination": "/topic/queue/1/2026-12-16/masked/1537",
+          "rows": 2,
+          "ownRows": 1,
+          "otherIdentityRows": 0,
+          "otherLeaked": 0,
+          "identityRows": 1,
+          "sample": [
+            {
+              "regId": 1437,
+              "patientId": 1537,
+              "patientNo": "WSAWS9253072D9A",
+              "patientName": "验收患者甲",
+              "queueNo": 1,
+              "status": "TRIAGED"
+            },
+            {
+              "regId": 1438,
+              "patientId": null,
+              "patientNo": null,
+              "patientName": null,
+              "queueNo": 2,
+              "status": "TRIAGED"
+            }
+          ]
+        }
+      ],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.983Z"
+    },
+    {
+      "name": "patient_b_own_masked_allowed",
+      "destination": "/topic/queue/1/2026-12-16/masked/1538",
+      "expectAllow": true,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": null,
+      "error": null,
+      "messages": [
+        {
+          "destination": "/topic/queue/1/2026-12-16/masked/1538",
+          "rows": 2,
+          "ownRows": 1,
+          "otherIdentityRows": 0,
+          "otherLeaked": 0,
+          "identityRows": 1,
+          "sample": [
+            {
+              "regId": 1437,
+              "patientId": null,
+              "patientNo": null,
+              "patientName": null,
+              "queueNo": 1,
+              "status": "TRIAGED"
+            },
+            {
+              "regId": 1438,
+              "patientId": 1538,
+              "patientNo": "WSBWS9253072D9A",
+              "patientName": "验收患者乙",
+              "queueNo": 2,
+              "status": "TRIAGED"
+            }
+          ]
+        }
+      ],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.984Z"
+    },
+    {
+      "name": "patient_full_rejected",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "患者无权订阅员工完整叫号队列",
+      "error": "患者无权订阅员工完整叫号队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.765Z"
+    },
+    {
+      "name": "patient_other_masked_rejected",
+      "destination": "/topic/queue/1/2026-12-16/masked/1538",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "无权订阅其他患者的叫号队列",
+      "error": "无权订阅其他患者的叫号队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.764Z"
+    },
+    {
+      "name": "patient_old_masked_rejected",
+      "destination": "/topic/queue/1/2026-12-16/masked",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "队列主题不合法",
+      "error": "队列主题不合法",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.764Z"
+    },
+    {
+      "name": "patient_no_queue_rejected",
+      "destination": "/topic/queue/2/2026-12-16/masked/1537",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "只能查看本人当日挂号对应的叫号队列",
+      "error": "只能查看本人当日挂号对应的叫号队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.767Z"
+    },
+    {
+      "name": "nurse_full_allowed",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": true,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": null,
+      "error": null,
+      "messages": [
+        {
+          "destination": "/topic/queue/1/2026-12-16",
+          "rows": 2,
+          "ownRows": 0,
+          "otherIdentityRows": 2,
+          "otherLeaked": 2,
+          "identityRows": 2,
+          "sample": [
+            {
+              "regId": 1437,
+              "patientId": 1537,
+              "patientNo": "WSAWS9253072D9A",
+              "patientName": "验收患者甲",
+              "queueNo": 1,
+              "status": "TRIAGED"
+            },
+            {
+              "regId": 1438,
+              "patientId": 1538,
+              "patientNo": "WSBWS9253072D9A",
+              "patientName": "验收患者乙",
+              "queueNo": 2,
+              "status": "TRIAGED"
+            }
+          ]
+        }
+      ],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.986Z"
+    },
+    {
+      "name": "admin_full_allowed",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": true,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": null,
+      "error": null,
+      "messages": [
+        {
+          "destination": "/topic/queue/1/2026-12-16",
+          "rows": 2,
+          "ownRows": 0,
+          "otherIdentityRows": 2,
+          "otherLeaked": 2,
+          "identityRows": 2,
+          "sample": [
+            {
+              "regId": 1437,
+              "patientId": 1537,
+              "patientNo": "WSAWS9253072D9A",
+              "patientName": "验收患者甲",
+              "queueNo": 1,
+              "status": "TRIAGED"
+            },
+            {
+              "regId": 1438,
+              "patientId": 1538,
+              "patientNo": "WSBWS9253072D9A",
+              "patientName": "验收患者乙",
+              "queueNo": 2,
+              "status": "TRIAGED"
+            }
+          ]
+        }
+      ],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.986Z"
+    },
+    {
+      "name": "doctor_own_full_allowed",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": true,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": null,
+      "error": null,
+      "messages": [
+        {
+          "destination": "/topic/queue/1/2026-12-16",
+          "rows": 2,
+          "ownRows": 0,
+          "otherIdentityRows": 2,
+          "otherLeaked": 2,
+          "identityRows": 2,
+          "sample": [
+            {
+              "regId": 1437,
+              "patientId": 1537,
+              "patientNo": "WSAWS9253072D9A",
+              "patientName": "验收患者甲",
+              "queueNo": 1,
+              "status": "TRIAGED"
+            },
+            {
+              "regId": 1438,
+              "patientId": 1538,
+              "patientNo": "WSBWS9253072D9A",
+              "patientName": "验收患者乙",
+              "queueNo": 2,
+              "status": "TRIAGED"
+            }
+          ]
+        }
+      ],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.986Z"
+    },
+    {
+      "name": "doctor_other_full_rejected",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "只能订阅自己的叫号队列",
+      "error": "只能订阅自己的叫号队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.766Z"
+    },
+    {
+      "name": "cashier_full_rejected",
+      "destination": "/topic/queue/1/2026-12-16",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "当前角色无权订阅该叫号队列",
+      "error": "当前角色无权订阅该叫号队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.765Z"
+    },
+    {
+      "name": "nurse_masked_rejected",
+      "destination": "/topic/queue/1/2026-12-16/masked/1537",
+      "expectAllow": false,
+      "connected": true,
+      "subscribeSent": true,
+      "stompError": "当前角色无权订阅患者专属队列",
+      "error": "当前角色无权订阅患者专属队列",
+      "messages": [],
+      "leakedFields": false,
+      "passed": true,
+      "endedAt": "2026-11-06T15:28:45.765Z"
+    }
+  ],
+  "checks": {
+    "BROADCAST_TRIGGER": {
+      "httpStatus": 200,
+      "code": 0,
+      "regId": 1438,
+      "status": "TRIAGED"
+    },
+    "MASKED_PAYLOADS": {
+      "patientA": {
+        "destination": "/topic/queue/1/2026-12-16/masked/1537",
+        "rows": 2,
+        "ownRows": 1,
+        "otherIdentityRows": 0,
+        "otherLeaked": 0,
+        "identityRows": 1,
+        "sample": [
+          {
+            "regId": 1437,
+            "patientId": 1537,
+            "patientNo": "WSAWS9253072D9A",
+            "patientName": "验收患者甲",
+            "queueNo": 1,
+            "status": "TRIAGED"
+          },
+          {
+            "regId": 1438,
+            "patientId": null,
+            "patientNo": null,
+            "patientName": null,
+            "queueNo": 2,
+            "status": "TRIAGED"
+          }
+        ]
+      },
+      "patientB": {
+        "destination": "/topic/queue/1/2026-12-16/masked/1538",
+        "rows": 2,
+        "ownRows": 1,
+        "otherIdentityRows": 0,
+        "otherLeaked": 0,
+        "identityRows": 1,
+        "sample": [
+          {
+            "regId": 1437,
+            "patientId": null,
+            "patientNo": null,
+            "patientName": null,
+            "queueNo": 1,
+            "status": "TRIAGED"
+          },
+          {
+            "regId": 1438,
+            "patientId": 1538,
+            "patientNo": "WSBWS9253072D9A",
+            "patientName": "验收患者乙",
+            "queueNo": 2,
+            "status": "TRIAGED"
+          }
+        ]
+      },
+      "nurseFull": {
+        "destination": "/topic/queue/1/2026-12-16",
+        "rows": 2,
+        "ownRows": 0,
+        "otherIdentityRows": 2,
+        "otherLeaked": 2,
+        "identityRows": 2,
+        "sample": [
+          {
+            "regId": 1437,
+            "patientId": 1537,
+            "patientNo": "WSAWS9253072D9A",
+            "patientName": "验收患者甲",
+            "queueNo": 1,
+            "status": "TRIAGED"
+          },
+          {
+            "regId": 1438,
+            "patientId": 1538,
+            "patientNo": "WSBWS9253072D9A",
+            "patientName": "验收患者乙",
+            "queueNo": 2,
+            "status": "TRIAGED"
+          }
+        ]
+      }
+    },
+    "REST_BOARD_CONSISTENCY": {
+      "code": 0,
+      "rows": 2,
+      "ownRows": 1,
+      "otherLeaked": 0
+    }
+  },
+  "errors": [],
+  "cleanup": [
+    {
+      "status": "PASS",
+      "residual": {
+        "tempPatients": 0,
+        "tempUsers": 0,
+        "tempSchedules": 0,
+        "tempRegistrations": 0,
+        "tempOperationLogs": 0
+      },
+      "baseline": {
+        "roles": 6,
+        "users": 15,
+        "schedules": 10,
+        "registrations": 7,
+        "refundRecords": 0
+      }
+    }
+  ],
+  "passed": true
+}

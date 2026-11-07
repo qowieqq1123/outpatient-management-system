@@ -1,0 +1,648 @@
+{
+  "scenario": "AC-25 / 全量 Mermaid 图集导出",
+  "baseline": "V1.7",
+  "generatedAt": "2026-11-06T15:31:35.000Z",
+  "cdpPort": 9225,
+  "mermaidVersion": null,
+  "sourceDocumentCount": 5,
+  "total": 33,
+  "svgCount": 33,
+  "pngCount": 33,
+  "diagrams": [
+    {
+      "sequence": 1,
+      "id": "PRD-01",
+      "title": "角色—用例总图（20 个用例与 include/extend）",
+      "type": "flowchart",
+      "source": "docs/01-产品需求文档PRD.md",
+      "sourceLine": 71,
+      "sourceSha256": "0a483f56d3733666dd9232622a6e1596418fb16bb30d8fb162e9a1db4eb48e16",
+      "width": 2859,
+      "height": 554,
+      "svg": {
+        "file": "docs/images/diagrams/01-PRD-01-role-usecase.svg",
+        "bytes": 40543
+      },
+      "png": {
+        "file": "docs/images/diagrams/01-PRD-01-role-usecase.png",
+        "bytes": 148844
+      }
+    },
+    {
+      "sequence": 2,
+      "id": "PRD-02",
+      "title": "三条主用户旅程（自费 / 医保失败重试 / 过号）",
+      "type": "flowchart",
+      "source": "docs/01-产品需求文档PRD.md",
+      "sourceLine": 142,
+      "sourceSha256": "53d14e70e2b0a973af919132667534aec1568c8bd56bfbbc87ba7d82108dc617",
+      "width": 822,
+      "height": 2009,
+      "svg": {
+        "file": "docs/images/diagrams/02-PRD-02-user-journeys.svg",
+        "bytes": 32122
+      },
+      "png": {
+        "file": "docs/images/diagrams/02-PRD-02-user-journeys.png",
+        "bytes": 64455
+      }
+    },
+    {
+      "sequence": 3,
+      "id": "PRD-03",
+      "title": "功能域与界面验收热区",
+      "type": "flowchart",
+      "source": "docs/01-产品需求文档PRD.md",
+      "sourceLine": 173,
+      "sourceSha256": "32492ac944ce259aad890e6e5d900c4a9131f875d8ac4efc88dcf9e88fe67a77",
+      "width": 2981,
+      "height": 455,
+      "svg": {
+        "file": "docs/images/diagrams/03-PRD-03-functional-map.svg",
+        "bytes": 24441
+      },
+      "png": {
+        "file": "docs/images/diagrams/03-PRD-03-functional-map.png",
+        "bytes": 83970
+      }
+    },
+    {
+      "sequence": 4,
+      "id": "PRD-04",
+      "title": "范围边界与可替换外部接口",
+      "type": "flowchart",
+      "source": "docs/01-产品需求文档PRD.md",
+      "sourceLine": 216,
+      "sourceSha256": "c92b661c55215322aa1b7cffc95287698749309ba75f481a89e44573f7a98320",
+      "width": 1814,
+      "height": 706,
+      "svg": {
+        "file": "docs/images/diagrams/04-PRD-04-scope-boundary.svg",
+        "bytes": 18012
+      },
+      "png": {
+        "file": "docs/images/diagrams/04-PRD-04-scope-boundary.png",
+        "bytes": 44453
+      }
+    },
+    {
+      "sequence": 5,
+      "id": "SC-LAYER-01",
+      "title": "分层架构图",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 24,
+      "sourceSha256": "3a9551d53ea8f13983c00dd0be8e8783f2ba50c58afbb4d7698ac0ece7d371b8",
+      "width": 2616,
+      "height": 1111,
+      "svg": {
+        "file": "docs/images/diagrams/05-SC-LAYER-01-layered-architecture.svg",
+        "bytes": 39740
+      },
+      "png": {
+        "file": "docs/images/diagrams/05-SC-LAYER-01-layered-architecture.png",
+        "bytes": 121117
+      }
+    },
+    {
+      "sequence": 6,
+      "id": "SC-RUN-01",
+      "title": "当前运行视图（前后端分离）",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 92,
+      "sourceSha256": "59d8807a46e9e8ce443928314a94e33949b97dad31ba43a4a6b67dcafac1878b",
+      "width": 1531,
+      "height": 408,
+      "svg": {
+        "file": "docs/images/diagrams/06-SC-RUN-01-runtime-view.svg",
+        "bytes": 17643
+      },
+      "png": {
+        "file": "docs/images/diagrams/06-SC-RUN-01-runtime-view.png",
+        "bytes": 44835
+      }
+    },
+    {
+      "sequence": 7,
+      "id": "SC-DEP-01",
+      "title": "运行时部署图",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 110,
+      "sourceSha256": "a124bb6d6842ec8a332e4a6b8e4f156802bf6c2368c7cfddd02da477297306a2",
+      "width": 1222,
+      "height": 179,
+      "svg": {
+        "file": "docs/images/diagrams/07-SC-DEP-01-deployment-view.svg",
+        "bytes": 11145
+      },
+      "png": {
+        "file": "docs/images/diagrams/07-SC-DEP-01-deployment-view.png",
+        "bytes": 20983
+      }
+    },
+    {
+      "sequence": 8,
+      "id": "SC-MOD-TOP",
+      "title": "顶层 SC 结构图",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 127,
+      "sourceSha256": "ce1d848967a97a1c341df95e43e493ae71bd07ee94202e088321b9d3c71374ff",
+      "width": 6669,
+      "height": 414,
+      "svg": {
+        "file": "docs/images/diagrams/08-SC-MOD-TOP-top-level-structure.svg",
+        "bytes": 70594
+      },
+      "png": {
+        "file": "docs/images/diagrams/08-SC-MOD-TOP-top-level-structure.png",
+        "bytes": 228567
+      }
+    },
+    {
+      "sequence": 9,
+      "id": "SC-MOD-01",
+      "title": "当前代码包与模块映射",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 199,
+      "sourceSha256": "1edaf5a87ff97ea636579a89874802102c9f4c5d9d8428b742d7683164a3f1dc",
+      "width": 3499,
+      "height": 245,
+      "svg": {
+        "file": "docs/images/diagrams/09-SC-MOD-01-package-module-map.svg",
+        "bytes": 22551
+      },
+      "png": {
+        "file": "docs/images/diagrams/09-SC-MOD-01-package-module-map.png",
+        "bytes": 48899
+      }
+    },
+    {
+      "sequence": 10,
+      "id": "SC-API-01",
+      "title": "六个工作台的主要 API 调用",
+      "type": "flowchart",
+      "source": "docs/02-概要设计说明书-SC结构图.md",
+      "sourceLine": 299,
+      "sourceSha256": "ddfe095b63459d932928332fc25545577128867b31ebbc5c423104377f9d9a78",
+      "width": 993,
+      "height": 931,
+      "svg": {
+        "file": "docs/images/diagrams/10-SC-API-01-workspace-api-map.svg",
+        "bytes": 28424
+      },
+      "png": {
+        "file": "docs/images/diagrams/10-SC-API-01-workspace-api-map.png",
+        "bytes": 63735
+      }
+    },
+    {
+      "sequence": 11,
+      "id": "SD-01",
+      "title": "在线挂号（含号源并发占用）",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 23,
+      "sourceSha256": "92a6d63f83481b46dd95686bbfc93736763002bdacddea3796b620c78d30a409",
+      "width": 2525,
+      "height": 1585,
+      "svg": {
+        "file": "docs/images/diagrams/11-SD-01-online-registration.svg",
+        "bytes": 36922
+      },
+      "png": {
+        "file": "docs/images/diagrams/11-SD-01-online-registration.png",
+        "bytes": 130973
+      }
+    },
+    {
+      "sequence": 12,
+      "id": "SD-02",
+      "title": "分诊报到与叫号",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 67,
+      "sourceSha256": "5a2acea49baa928ce87da21c278a7ed9e5e60008b2c4dd1af0b19893d9d6d17f",
+      "width": 2757,
+      "height": 1616,
+      "svg": {
+        "file": "docs/images/diagrams/12-SD-02-triage-call.svg",
+        "bytes": 37845
+      },
+      "png": {
+        "file": "docs/images/diagrams/12-SD-02-triage-call.png",
+        "bytes": 128650
+      }
+    },
+    {
+      "sequence": 13,
+      "id": "SD-03",
+      "title": "过号判定与重排",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 112,
+      "sourceSha256": "4790227558ee1b15dd1b62746491d7bbb849f721385b251bf99e3aaf3416b525",
+      "width": 1806,
+      "height": 1142,
+      "svg": {
+        "file": "docs/images/diagrams/13-SD-03-missed-call-reorder.svg",
+        "bytes": 31858
+      },
+      "png": {
+        "file": "docs/images/diagrams/13-SD-03-missed-call-reorder.png",
+        "bytes": 78334
+      }
+    },
+    {
+      "sequence": 14,
+      "id": "SD-04",
+      "title": "医生接诊：病历、多张处方与检查单",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 163,
+      "sourceSha256": "01aac4327c5db8c97d54459a9d6c6bfdd88b256b79e8534cbfafb49341a44e17",
+      "width": 2187,
+      "height": 1986,
+      "svg": {
+        "file": "docs/images/diagrams/14-SD-04-doctor-visit.svg",
+        "bytes": 40061
+      },
+      "png": {
+        "file": "docs/images/diagrams/14-SD-04-doctor-visit.png",
+        "bytes": 142859
+      }
+    },
+    {
+      "sequence": 15,
+      "id": "SD-05",
+      "title": "划价收费与医保结算（含失败重试）",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 215,
+      "sourceSha256": "75e3df67d050e72ee61b8d7ae56030468ae95d5f888f9d10b7ebfa5c704eafff",
+      "width": 2592,
+      "height": 2175,
+      "svg": {
+        "file": "docs/images/diagrams/15-SD-05-billing-insurance.svg",
+        "bytes": 44582
+      },
+      "png": {
+        "file": "docs/images/diagrams/15-SD-05-billing-insurance.png",
+        "bytes": 162626
+      }
+    },
+    {
+      "sequence": 16,
+      "id": "SD-06",
+      "title": "处方审核、双人签字与发药退药",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 272,
+      "sourceSha256": "101560183035ae139344fcc1367261c9f80db663671ecd32f126ad9ff54f9aa7",
+      "width": 2044,
+      "height": 1913,
+      "svg": {
+        "file": "docs/images/diagrams/16-SD-06-prescription-dispense.svg",
+        "bytes": 40968
+      },
+      "png": {
+        "file": "docs/images/diagrams/16-SD-06-prescription-dispense.png",
+        "bytes": 127957
+      }
+    },
+    {
+      "sequence": 17,
+      "id": "SD-07",
+      "title": "退号退费",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 324,
+      "sourceSha256": "954a40bd658743463d4a269505489a19fbabeac434e02f103a89fa28a5668399",
+      "width": 2537,
+      "height": 1252,
+      "svg": {
+        "file": "docs/images/diagrams/17-SD-07-registration-refund.svg",
+        "bytes": 35354
+      },
+      "png": {
+        "file": "docs/images/diagrams/17-SD-07-registration-refund.png",
+        "bytes": 109223
+      }
+    },
+    {
+      "sequence": 18,
+      "id": "SD-07A",
+      "title": "患者取消挂号",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 361,
+      "sourceSha256": "6c0df218093784b18a052a0be38d5ff78fe5d47a6e8ac4dec69dedc303a1d31f",
+      "width": 1880,
+      "height": 1005,
+      "svg": {
+        "file": "docs/images/diagrams/18-SD-07A-patient-cancel.svg",
+        "bytes": 30080
+      },
+      "png": {
+        "file": "docs/images/diagrams/18-SD-07A-patient-cancel.png",
+        "bytes": 69939
+      }
+    },
+    {
+      "sequence": 19,
+      "id": "STD-01",
+      "title": "挂号单状态机",
+      "type": "stateDiagram-v2",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 393,
+      "sourceSha256": "dad32810f66d8f6fab365de532936d48b7642feb2a77b6099cc16bfafb98a129",
+      "width": 1041,
+      "height": 633,
+      "svg": {
+        "file": "docs/images/diagrams/19-STD-01-registration-state.svg",
+        "bytes": 17685
+      },
+      "png": {
+        "file": "docs/images/diagrams/19-STD-01-registration-state.png",
+        "bytes": 48027
+      }
+    },
+    {
+      "sequence": 20,
+      "id": "STD-02",
+      "title": "处方状态机",
+      "type": "stateDiagram-v2",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 415,
+      "sourceSha256": "af5f3b023adecd3182437147ce41fb49d8a71bc0aa13580797be8a9132ae55ae",
+      "width": 935,
+      "height": 719,
+      "svg": {
+        "file": "docs/images/diagrams/20-STD-02-prescription-state.svg",
+        "bytes": 17481
+      },
+      "png": {
+        "file": "docs/images/diagrams/20-STD-02-prescription-state.png",
+        "bytes": 42421
+      }
+    },
+    {
+      "sequence": 21,
+      "id": "STD-03",
+      "title": "收费单状态机",
+      "type": "stateDiagram-v2",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 437,
+      "sourceSha256": "c84dd4dea0f8ec2568d6b1ad42535d64dded7ab9c8ad0835fc4a30e6de56e067",
+      "width": 841,
+      "height": 592,
+      "svg": {
+        "file": "docs/images/diagrams/21-STD-03-fee-bill-state.svg",
+        "bytes": 13884
+      },
+      "png": {
+        "file": "docs/images/diagrams/21-STD-03-fee-bill-state.png",
+        "bytes": 29790
+      }
+    },
+    {
+      "sequence": 22,
+      "id": "STD-04",
+      "title": "就诊状态机",
+      "type": "stateDiagram-v2",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 455,
+      "sourceSha256": "6647a1be056f84ac0d535ca11d6f82837e4e7ce50466d570384850d64647815b",
+      "width": 411,
+      "height": 328,
+      "svg": {
+        "file": "docs/images/diagrams/22-STD-04-visit-state.svg",
+        "bytes": 8631
+      },
+      "png": {
+        "file": "docs/images/diagrams/22-STD-04-visit-state.png",
+        "bytes": 14028
+      }
+    },
+    {
+      "sequence": 23,
+      "id": "SD-08",
+      "title": "JWT 登录与鉴权",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 516,
+      "sourceSha256": "20ec8feadc7ba7db396de33d75872789c3644c74697e00f27a67217576f19743",
+      "width": 1833,
+      "height": 1787,
+      "svg": {
+        "file": "docs/images/diagrams/23-SD-08-jwt-authentication.svg",
+        "bytes": 35581
+      },
+      "png": {
+        "file": "docs/images/diagrams/23-SD-08-jwt-authentication.png",
+        "bytes": 124776
+      }
+    },
+    {
+      "sequence": 24,
+      "id": "SD-09",
+      "title": "WebSocket 实时叫号",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 565,
+      "sourceSha256": "90da35f28ff91cac6ca8da890fd95724107bb8c680cc97810222b6ec9acbafe9",
+      "width": 2649,
+      "height": 1377,
+      "svg": {
+        "file": "docs/images/diagrams/24-SD-09-websocket-queue.svg",
+        "bytes": 34662
+      },
+      "png": {
+        "file": "docs/images/diagrams/24-SD-09-websocket-queue.png",
+        "bytes": 119392
+      }
+    },
+    {
+      "sequence": 25,
+      "id": "SD-10",
+      "title": "库存锁定与发药 [扩展设计]",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 609,
+      "sourceSha256": "b0267111a594a989e28713bb7b5ff445fcd2104b965c12c0fe28cf8633b68b2c",
+      "width": 1983,
+      "height": 1061,
+      "svg": {
+        "file": "docs/images/diagrams/25-SD-10-stock-lock-extension.svg",
+        "bytes": 30930
+      },
+      "png": {
+        "file": "docs/images/diagrams/25-SD-10-stock-lock-extension.png",
+        "bytes": 69277
+      }
+    },
+    {
+      "sequence": 26,
+      "id": "SD-11",
+      "title": "幂等挂号 [扩展设计]",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 646,
+      "sourceSha256": "b474f71a30ecf9b485be545d2917d5a2e35a4344442ddedf86132f51a8ff40f4",
+      "width": 1350,
+      "height": 915,
+      "svg": {
+        "file": "docs/images/diagrams/26-SD-11-idempotent-registration-extension.svg",
+        "bytes": 27036
+      },
+      "png": {
+        "file": "docs/images/diagrams/26-SD-11-idempotent-registration-extension.png",
+        "bytes": 49818
+      }
+    },
+    {
+      "sequence": 27,
+      "id": "SD-12",
+      "title": "医保失败与原单重试",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 678,
+      "sourceSha256": "6c6218b8ff7c99fd51490f19f779ce45990cd52ac37f2c4c05025e8c304c6784",
+      "width": 2168,
+      "height": 1173,
+      "svg": {
+        "file": "docs/images/diagrams/27-SD-12-insurance-retry.svg",
+        "bytes": 32592
+      },
+      "png": {
+        "file": "docs/images/diagrams/27-SD-12-insurance-retry.png",
+        "bytes": 86628
+      }
+    },
+    {
+      "sequence": 28,
+      "id": "SD-13",
+      "title": "审计日志独立事务",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 714,
+      "sourceSha256": "1214a50034cff827e73d34a2e897b5b2f966f1eee45358f006d55df1acff422a",
+      "width": 1629,
+      "height": 1198,
+      "svg": {
+        "file": "docs/images/diagrams/28-SD-13-independent-audit.svg",
+        "bytes": 31669
+      },
+      "png": {
+        "file": "docs/images/diagrams/28-SD-13-independent-audit.png",
+        "bytes": 62265
+      }
+    },
+    {
+      "sequence": 29,
+      "id": "SD-14",
+      "title": "前端首屏、JWT 失效与看板降级",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 750,
+      "sourceSha256": "96407e3966d5a5acafae80c81779f2dd9e97e96d5cf0c9bee13fe210ed630188",
+      "width": 1305,
+      "height": 1535,
+      "svg": {
+        "file": "docs/images/diagrams/29-SD-14-frontend-fallback.svg",
+        "bytes": 32711
+      },
+      "png": {
+        "file": "docs/images/diagrams/29-SD-14-frontend-fallback.png",
+        "bytes": 87352
+      }
+    },
+    {
+      "sequence": 30,
+      "id": "SD-15",
+      "title": "管理员维护用户、角色与排班",
+      "type": "sequenceDiagram",
+      "source": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "sourceLine": 796,
+      "sourceSha256": "af0dca948db9d4470492d69ac1e546d48ab2acc9a6277b3472540b1c5e9e0e45",
+      "width": 2548,
+      "height": 1203,
+      "svg": {
+        "file": "docs/images/diagrams/30-SD-15-admin-maintenance.svg",
+        "bytes": 33441
+      },
+      "png": {
+        "file": "docs/images/diagrams/30-SD-15-admin-maintenance.png",
+        "bytes": 93594
+      }
+    },
+    {
+      "sequence": 31,
+      "id": "ER-全局",
+      "title": "ER 全局图",
+      "type": "erDiagram",
+      "source": "docs/04-数据库设计说明书.md",
+      "sourceLine": 31,
+      "sourceSha256": "7ab970b894b55c9221fb293ee3b1254f6077ebbf282dc03b7c35ddd5f4cd2d03",
+      "width": 1705,
+      "height": 1566,
+      "svg": {
+        "file": "docs/images/diagrams/31-ER-全局-global-er.svg",
+        "bytes": 66624
+      },
+      "png": {
+        "file": "docs/images/diagrams/31-ER-全局-global-er.png",
+        "bytes": 125477
+      }
+    },
+    {
+      "sequence": 32,
+      "id": "DEP-01",
+      "title": "开发运行时拓扑",
+      "type": "flowchart",
+      "source": "docs/07-前后端分离架构与部署说明.md",
+      "sourceLine": 21,
+      "sourceSha256": "a705b6b02a2703b35ab87dc63abe3a4c504f737b3fa40862431ff28b1fbbc538",
+      "width": 887,
+      "height": 129,
+      "svg": {
+        "file": "docs/images/diagrams/32-DEP-01-dev-runtime.svg",
+        "bytes": 10070
+      },
+      "png": {
+        "file": "docs/images/diagrams/32-DEP-01-dev-runtime.png",
+        "bytes": 15391
+      }
+    },
+    {
+      "sequence": 33,
+      "id": "DEP-02",
+      "title": "生产/演示运行时拓扑",
+      "type": "flowchart",
+      "source": "docs/07-前后端分离架构与部署说明.md",
+      "sourceLine": 31,
+      "sourceSha256": "1d45ca49447f47078ca5b308c6dc98f62d02c04f0cf590621c57a75f626ee425",
+      "width": 1054,
+      "height": 149,
+      "svg": {
+        "file": "docs/images/diagrams/33-DEP-02-production-runtime.svg",
+        "bytes": 10767
+      },
+      "png": {
+        "file": "docs/images/diagrams/33-DEP-02-production-runtime.png",
+        "bytes": 17776
+      }
+    }
+  ],
+  "errors": [],
+  "cleanup": [
+    {
+      "status": "PASS",
+      "removedStaleExports": []
+    }
+  ],
+  "passed": true
+}

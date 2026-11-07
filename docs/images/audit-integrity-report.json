@@ -1,0 +1,189 @@
+{
+  "scenario": "AC-29 / 关键操作审计完整性与 SYSTEM 身份",
+  "baseline": "V1.7",
+  "generatedAt": "2026-11-06T15:28:46.547Z",
+  "apiBase": "http://127.0.0.1:8080",
+  "startAtLocal": "2026-11-06 23:28:44",
+  "fixture": {
+    "suffix": "AU926545E142",
+    "username": "audAU926545E142",
+    "patientNoA": "AUAAU926545E142",
+    "patientNoC": "AUCAU926545E142",
+    "patientNoD": "AUDAU926545E142",
+    "timeSlot": "审计验收 AU926545E142",
+    "pidA": 1539,
+    "pidC": 1540,
+    "pidD": 1541,
+    "userId": 1556,
+    "scheduleId": 75,
+    "regBook": 1441,
+    "regArrive": 1439,
+    "regMiss": 1440,
+    "visitId": 7,
+    "checkupId": 13,
+    "billId": 8,
+    "workDate": "2026-12-17"
+  },
+  "checks": {
+    "REGISTRATION_BOOK": {
+      "code": 0,
+      "regId": 1441,
+      "queueNo": 4
+    },
+    "QUEUE_REPORT": {
+      "code": 0,
+      "status": "TRIAGED",
+      "callOrder": 4
+    },
+    "QUEUE_ARRIVE": {
+      "code": 0,
+      "arrivedAt": "2026-11-06T23:28:46.9236556"
+    },
+    "BILL_PRICE": {
+      "code": 0,
+      "billId": 8,
+      "status": "UNPAID",
+      "totalAmount": 25
+    },
+    "QUEUE_SWEEP_TRIGGER": {
+      "code": 0,
+      "swept": 1
+    },
+    "AUDIT_ROWS": [
+      {
+        "logId": 767,
+        "operatorId": 1556,
+        "operatorName": "审计患者甲",
+        "operatorRole": "PATIENT",
+        "action": "REGISTRATION_BOOK",
+        "targetType": "REGISTRATION",
+        "targetId": "1441",
+        "operateTime": "2026-11-06 23:28:47"
+      },
+      {
+        "logId": 768,
+        "operatorId": 7,
+        "operatorName": "孙雪",
+        "operatorRole": "NURSE",
+        "action": "QUEUE_REPORT",
+        "targetType": "REGISTRATION",
+        "targetId": "1441",
+        "operateTime": "2026-11-06 23:28:47"
+      },
+      {
+        "logId": 769,
+        "operatorId": 2,
+        "operatorName": "张明",
+        "operatorRole": "DOCTOR",
+        "action": "QUEUE_ARRIVE",
+        "targetType": "REGISTRATION",
+        "targetId": "1439",
+        "operateTime": "2026-11-06 23:28:47"
+      },
+      {
+        "logId": 770,
+        "operatorId": 8,
+        "operatorName": "周芳",
+        "operatorRole": "CASHIER",
+        "action": "BILL_PRICE",
+        "targetType": "BILL",
+        "targetId": "8",
+        "operateTime": "2026-11-06 23:28:47"
+      },
+      {
+        "logId": 771,
+        "operatorId": 0,
+        "operatorName": "系统任务",
+        "operatorRole": "SYSTEM",
+        "action": "QUEUE_MISS",
+        "targetType": "REGISTRATION",
+        "targetId": "1440",
+        "operateTime": "2026-11-06 23:28:47"
+      }
+    ],
+    "AUDIT_REGISTRATION_BOOK": {
+      "logId": 767,
+      "operatorId": 1556,
+      "operatorName": "审计患者甲",
+      "operatorRole": "PATIENT",
+      "action": "REGISTRATION_BOOK",
+      "targetType": "REGISTRATION",
+      "targetId": "1441",
+      "operateTime": "2026-11-06 23:28:47"
+    },
+    "AUDIT_QUEUE_REPORT": {
+      "logId": 768,
+      "operatorId": 7,
+      "operatorName": "孙雪",
+      "operatorRole": "NURSE",
+      "action": "QUEUE_REPORT",
+      "targetType": "REGISTRATION",
+      "targetId": "1441",
+      "operateTime": "2026-11-06 23:28:47"
+    },
+    "AUDIT_QUEUE_ARRIVE": {
+      "logId": 769,
+      "operatorId": 2,
+      "operatorName": "张明",
+      "operatorRole": "DOCTOR",
+      "action": "QUEUE_ARRIVE",
+      "targetType": "REGISTRATION",
+      "targetId": "1439",
+      "operateTime": "2026-11-06 23:28:47"
+    },
+    "AUDIT_BILL_PRICE": {
+      "logId": 770,
+      "operatorId": 8,
+      "operatorName": "周芳",
+      "operatorRole": "CASHIER",
+      "action": "BILL_PRICE",
+      "targetType": "BILL",
+      "targetId": "8",
+      "operateTime": "2026-11-06 23:28:47"
+    },
+    "AUDIT_QUEUE_MISS": {
+      "logId": 771,
+      "operatorId": 0,
+      "operatorName": "系统任务",
+      "operatorRole": "SYSTEM",
+      "action": "QUEUE_MISS",
+      "targetType": "REGISTRATION",
+      "targetId": "1440",
+      "operateTime": "2026-11-06 23:28:47"
+    },
+    "REQUIRES_NEW_SEMANTICS": {
+      "requiresNew": true,
+      "postTransactionFlush": true,
+      "notAtomicInSd": true,
+      "noDoubleConnectionInDbd": true
+    }
+  },
+  "errors": [],
+  "cleanup": [
+    {
+      "status": "PASS",
+      "residual": {
+        "tempPatients": 0,
+        "tempUsers": 0,
+        "tempSchedules": 0,
+        "tempRegistrations": 0,
+        "tempVisits": 0,
+        "tempCheckups": 0,
+        "tempBills": 0,
+        "tempFeeItems": 0,
+        "tempOperationLogs": 0
+      },
+      "baseline": {
+        "roles": 6,
+        "users": 15,
+        "schedules": 10,
+        "registrations": 7,
+        "refundRecords": 0,
+        "bills": 3,
+        "settlements": 2,
+        "checkups": 4
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,308 @@
+{
+  "apiBase": "http://127.0.0.1:8080",
+  "uiBase": "http://127.0.0.1:5173",
+  "baseline": "V1.7",
+  "fixture": {
+    "suffix": "QR911677",
+    "roleCode": "QR911677",
+    "username": "qaqr911677",
+    "workDate": "2026-12-06",
+    "timeSlot": "验收时段 QR911677"
+  },
+  "checks": {
+    "NON_ADMIN_FORBIDDEN": {
+      "read": 403,
+      "write": 403,
+      "dirtyRoleRows": 0
+    },
+    "ADMIN_CATALOG": {
+      "doctors": 5,
+      "departments": 5,
+      "firstDoctor": {
+        "doctorId": 1,
+        "name": "张明",
+        "title": "主任医师",
+        "deptId": 1,
+        "deptName": "内科"
+      }
+    },
+    "ROLE_MAINTENANCE": {
+      "created": {
+        "roleCode": "QR911677",
+        "roleName": "验收临时角色",
+        "permissions": "log:query,user:query"
+      },
+      "updated": {
+        "roleCode": "QR911677",
+        "roleName": "验收临时角色已调整",
+        "permissions": "log:query"
+      },
+      "duplicate": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "角色编码已存在",
+        "data": null
+      },
+      "roleRow": [
+        "验收临时角色已调整",
+        "log:query"
+      ],
+      "roleCount": 1
+    },
+    "USER_CREATE": {
+      "user": {
+        "userId": 1553,
+        "username": "qaqr911677",
+        "realName": "验收账号",
+        "roleCode": "QR911677",
+        "refId": null,
+        "enabled": true,
+        "createdAt": "2026-11-06T23:28:32.00705"
+      },
+      "hashPrefix": "pbkdf2:sha256:1200",
+      "viewKeys": [
+        "userId",
+        "username",
+        "realName",
+        "roleCode",
+        "refId",
+        "enabled",
+        "createdAt"
+      ],
+      "loginCode": 0
+    },
+    "INVALID_REF_ID": {
+      "badRef": {
+        "code": 404,
+        "message": "业务档案不存在"
+      },
+      "missingRef": {
+        "code": 400,
+        "message": "患者/医生账号必须绑定业务档案"
+      },
+      "dirtyRows": 0
+    },
+    "USER_PASSWORD_RESET": {
+      "update": {
+        "userId": 1553,
+        "username": "qaqr911677",
+        "realName": "验收账号已调整",
+        "roleCode": "QR911677",
+        "refId": null,
+        "enabled": true,
+        "createdAt": "2026-11-06T23:28:32"
+      },
+      "oldPasswordLogin": 401,
+      "newPasswordLogin": 0,
+      "hashChanged": true
+    },
+    "USER_STATUS": {
+      "disabled": {
+        "userId": 1553,
+        "username": "qaqr911677",
+        "realName": "验收账号已调整",
+        "roleCode": "QR911677",
+        "refId": null,
+        "enabled": false,
+        "createdAt": "2026-11-06T23:28:32"
+      },
+      "disabledLogin": 401,
+      "selfDisable": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "不能禁用当前登录管理员",
+        "data": null
+      },
+      "adminStillWorks": 0
+    },
+    "SCHEDULE_CAPACITY": {
+      "created": {
+        "scheduleId": 73,
+        "workDate": "2026-12-06",
+        "timeSlot": "验收时段 QR911677",
+        "doctorId": 1,
+        "doctorName": "张明",
+        "title": "主任医师",
+        "deptId": 1,
+        "deptName": "内科",
+        "location": "门诊楼 1 层 101",
+        "totalQty": 4,
+        "remainingQty": 4,
+        "registrationFee": 18.5,
+        "status": "OPEN",
+        "full": false
+      },
+      "duplicateSchedule": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "同一医生同一日期已存在该时段排班",
+        "data": null
+      },
+      "duplicateScheduleRows": 1,
+      "expanded": {
+        "scheduleId": 73,
+        "workDate": "2026-12-06",
+        "timeSlot": "验收时段 QR911677",
+        "doctorId": 1,
+        "doctorName": "张明",
+        "title": "主任医师",
+        "deptId": 1,
+        "deptName": "内科",
+        "location": "门诊楼 1 层 101",
+        "totalQty": 8,
+        "remainingQty": 8,
+        "registrationFee": 18.5,
+        "status": "OPEN",
+        "full": false
+      },
+      "afterBookings": [
+        "8",
+        "6"
+      ],
+      "regIds": [
+        1435,
+        1436
+      ],
+      "expandedOccupied": {
+        "scheduleId": 73,
+        "workDate": "2026-12-06",
+        "timeSlot": "验收时段 QR911677",
+        "doctorId": 1,
+        "doctorName": "张明",
+        "title": "主任医师",
+        "deptId": 1,
+        "deptName": "内科",
+        "location": "门诊楼 1 层 101",
+        "totalQty": 9,
+        "remainingQty": 7,
+        "registrationFee": 18.5,
+        "status": "OPEN",
+        "full": false
+      },
+      "overbooked": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "调整后的号源总量不能小于已占用数量 2",
+        "data": null
+      },
+      "afterConflict": [
+        "9",
+        "7"
+      ]
+    },
+    "SCHEDULE_CLOSE": {
+      "closed": {
+        "scheduleId": 73,
+        "workDate": "2026-12-06",
+        "timeSlot": "验收时段 QR911677",
+        "doctorId": 1,
+        "doctorName": "张明",
+        "title": "主任医师",
+        "deptId": 1,
+        "deptName": "内科",
+        "location": "门诊楼 1 层 101",
+        "totalQty": 9,
+        "remainingQty": 7,
+        "registrationFee": 18.5,
+        "status": "CLOSED",
+        "full": false
+      },
+      "closedBook": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "该时段已停诊",
+        "data": null
+      },
+      "editClosed": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "已停诊排班不能编辑",
+        "data": null
+      },
+      "registrationRows": 2
+    },
+    "AUDIT_ACTIONS": {
+      "rows": {
+        "ROLE_UPSERT": 2,
+        "USER_UPSERT": 2,
+        "USER_STATUS": 1,
+        "SCHEDULE_UPSERT": 3,
+        "SCHEDULE_CLOSE": 1
+      },
+      "restRows": 1,
+      "restCode": 0
+    },
+    "SPA_ADMIN_DESKTOP": {
+      "title": "管理后台",
+      "nav": 6,
+      "panels": 6,
+      "forms": [
+        "admin-role-form",
+        "admin-user-form",
+        "admin-schedule-form"
+      ],
+      "sections": [
+        "sec-admin-access",
+        "sec-admin-schedules"
+      ],
+      "roleRows": 23,
+      "scheduleRows": 11,
+      "versionBoundary": "V1.7：用户 / 角色 / 排班维护、WebSocket 主题授权、关键审计、设计图集、连通性与 50 并发 P95 已交付；批次库存锁、幂等键列为扩展设计",
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "badMoney": 0,
+      "viewportWidth": 1440,
+      "horizontalOverflow": false
+    },
+    "SPA_ADMIN_MOBILE": {
+      "title": "管理后台",
+      "nav": 6,
+      "panels": 6,
+      "forms": [
+        "admin-role-form",
+        "admin-user-form",
+        "admin-schedule-form"
+      ],
+      "sections": [
+        "sec-admin-access",
+        "sec-admin-schedules"
+      ],
+      "roleRows": 23,
+      "scheduleRows": 11,
+      "versionBoundary": "V1.7：用户 / 角色 / 排班维护、WebSocket 主题授权、关键审计、设计图集、连通性与 50 并发 P95 已交付；批次库存锁、幂等键列为扩展设计",
+      "rawStatus": 0,
+      "rawStatusTexts": [],
+      "badMoney": 0,
+      "viewportWidth": 390,
+      "horizontalOverflow": false
+    },
+    "SPA_EVIDENCE": {
+      "screenshots": [
+        "admin-maintenance-desktop.png",
+        "admin-maintenance-forms-desktop.png",
+        "admin-maintenance-schedules-desktop.png",
+        "admin-maintenance-mobile.png",
+        "admin-maintenance-forms-mobile.png"
+      ],
+      "note": "截图取自本次临时验收夹具；main() 结束时统一清理角色、账号、排班、挂号与审计数据"
+    },
+    "SPA_RUNTIME": {
+      "jsExceptions": [],
+      "severeLogs": []
+    }
+  },
+  "errors": [],
+  "cleanup": [
+    {
+      "status": "PASS",
+      "residual": {
+        "role": 0,
+        "user": 0,
+        "schedule": 0,
+        "registration": 0,
+        "operationLog": 0
+      }
+    }
+  ],
+  "passed": true
+}

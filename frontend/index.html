@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075f5a">
+  <title>门诊挂号与就诊管理系统 · 门诊导视工作台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23075f5a'/%3E%3Cpath d='M28 14h8v14h14v8H36v14h-8V36H14v-8h14z' fill='%23f4c66a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient-disc ambient-disc-a"></span>
+    <span class="ambient-disc ambient-disc-b"></span>
+    <span class="ambient-ring"></span>
+  </div>
+
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-mark">+</div>
+    <p>正在整理门诊导视工作台</p>
+  </div>
+
+  <section id="login-view" class="view login-view" hidden>
+    <div class="login-story">
+      <div class="brand-lockup">
+        <span class="brand-cross">+</span>
+        <div>
+          <p class="eyebrow">OUTPATIENT OPERATIONS</p>
+          <h1>门诊挂号与<br>就诊管理系统</h1>
+        </div>
+      </div>
+
+      <p class="story-lead">把一次就诊，排成一条清晰的线。</p>
+      <p class="story-copy">从号源、分诊、接诊到收费与发药，六个角色在同一条业务链上协同；状态由服务端裁定，异常在界面上明确可见。</p>
+
+      <ol class="wayfinding" aria-label="门诊业务链路">
+        <li><span>01</span><div><strong>查排班 · 取号</strong><small>号源余量与重复占用可见</small></div></li>
+        <li><span>02</span><div><strong>分诊 · 叫号</strong><small>当前号、候诊队列、过号标记</small></div></li>
+        <li><span>03</span><div><strong>接诊 · 开单</strong><small>病历、处方、检查单一对多</small></div></li>
+        <li><span>04</span><div><strong>划价 · 收费</strong><small>自费与医保失败重试分通道</small></div></li>
+        <li><span>05</span><div><strong>审核 · 发药</strong><small>双签与库存事务保证用药安全</small></div></li>
+      </ol>
+
+      <div class="story-foot">
+        <span class="story-line"></span>
+        <span>Spring Boot · MySQL · JWT · WebSocket</span>
+      </div>
+    </div>
+
+    <div class="login-panel">
+      <div class="login-card">
+        <div class="login-card-head">
+          <p class="eyebrow">SECURE ENTRY / 统一入口</p>
+          <h2>选择身份，进入工作台</h2>
+          <p class="muted">登录身份仅用于演示填充；服务端按账号真实角色签发 JWT 并授权接口。</p>
+        </div>
+
+        <div id="role-picker" class="role-picker" role="radiogroup" aria-label="登录身份"></div>
+
+        <form id="login-form" class="login-form" autocomplete="on">
+          <label for="login-username">登录账号</label>
+          <input id="login-username" name="username" type="text" required autocomplete="username" placeholder="请输入演示账号">
+
+          <label for="login-password">登录密码</label>
+          <div class="password-wrap">
+            <input id="login-password" name="password" type="password" required autocomplete="current-password" placeholder="请输入密码">
+            <button type="button" class="password-toggle" data-action="toggle-password" aria-label="显示或隐藏密码">显示</button>
+          </div>
+
+          <div id="login-message" class="form-message" aria-live="polite"></div>
+          <button class="btn btn-primary btn-block" type="submit">进入工作台 <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="demo-note">
+          <span class="demo-seal">演示</span>
+          <p id="demo-note">所有演示账号初始密码均为 <strong>123456</strong>。精神类处方第二签字可换用 <code>pharma02</code> 登录。</p>
+        </div>
+      </div>
+      <p class="login-legal">本页只保存 JWT 于本机会话；退出登录即清除。业务接口均以服务端权限判定为准。</p>
+    </div>
+  </section>
+
+  <section id="app-view" class="view app-view" hidden>
+    <header class="topbar">
+      <div class="topbar-brand">
+        <span class="brand-cross small">+</span>
+        <div>
+          <strong><span class="brand-full">门诊导视工作台</span><span class="brand-compact">门诊工作台</span></strong>
+          <small>OUTPATIENT / OPERATIONS</small>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span id="clock" class="clock" aria-live="off"></span>
+        <span id="connection-pill" class="connection-pill"><i></i>本地服务正常</span>
+        <div class="session-chip">
+          <span id="session-role" class="session-role">—</span>
+          <span id="session-name" class="session-name">—</span>
+        </div>
+        <button id="logout-btn" class="btn btn-quiet" type="button" data-action="logout">退出</button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <nav id="workspace-nav" class="side-nav" aria-label="工作台导航"></nav>
+      <main id="workspace" class="workspace" tabindex="-1"></main>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><div class="noscript">本系统需要启用 JavaScript 才能加载工作台。</div></noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

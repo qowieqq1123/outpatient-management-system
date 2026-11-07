@@ -1,0 +1,255 @@
+{
+  "apiBase": "http://127.0.0.1:8080",
+  "baseline": "V1.7",
+  "scenario": "AC-04 / BR-03",
+  "fixture": {
+    "suffix": "CC927584",
+    "workDate": "2026-12-16",
+    "timeSlot": "并发验收 CC927584",
+    "capacity": 15,
+    "attempts": 20
+  },
+  "checks": {
+    "FIXTURE": {
+      "doctor": {
+        "doctorId": 1,
+        "deptId": 1
+      },
+      "patients": 20,
+      "users": 20,
+      "scheduleId": 76,
+      "totalQty": 15,
+      "remainingQty": 15
+    },
+    "CONCURRENT_BOOKING": {
+      "elapsedMs": 224,
+      "attempts": 20,
+      "successes": 15,
+      "rejections": 5,
+      "queueNos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "dbQueueNos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "scheduleRow": [
+        "15",
+        "0",
+        "OPEN"
+      ],
+      "allActive": true,
+      "chineseRejections": true,
+      "rejectionMessages": [
+        "号源已挂满，请重新选择"
+      ],
+      "latencyMs": {
+        "min": 51,
+        "max": 222
+      }
+    },
+    "REQUEST_DETAILS": [
+      {
+        "username": "cc927584p01",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 1,
+        "regId": 1442,
+        "elapsedMs": 51
+      },
+      {
+        "username": "cc927584p02",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 11,
+        "regId": 1452,
+        "elapsedMs": 166
+      },
+      {
+        "username": "cc927584p03",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 6,
+        "regId": 1447,
+        "elapsedMs": 134
+      },
+      {
+        "username": "cc927584p04",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 3,
+        "regId": 1444,
+        "elapsedMs": 60
+      },
+      {
+        "username": "cc927584p05",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 10,
+        "regId": 1451,
+        "elapsedMs": 150
+      },
+      {
+        "username": "cc927584p06",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 2,
+        "regId": 1443,
+        "elapsedMs": 55
+      },
+      {
+        "username": "cc927584p07",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 7,
+        "regId": 1448,
+        "elapsedMs": 141
+      },
+      {
+        "username": "cc927584p08",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 4,
+        "regId": 1445,
+        "elapsedMs": 123
+      },
+      {
+        "username": "cc927584p09",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 9,
+        "regId": 1450,
+        "elapsedMs": 147
+      },
+      {
+        "username": "cc927584p10",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 8,
+        "regId": 1449,
+        "elapsedMs": 142
+      },
+      {
+        "username": "cc927584p11",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 5,
+        "regId": 1446,
+        "elapsedMs": 128
+      },
+      {
+        "username": "cc927584p12",
+        "code": 409,
+        "message": "号源已挂满，请重新选择",
+        "queueNo": null,
+        "regId": null,
+        "elapsedMs": 216
+      },
+      {
+        "username": "cc927584p13",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 13,
+        "regId": 1454,
+        "elapsedMs": 195
+      },
+      {
+        "username": "cc927584p14",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 12,
+        "regId": 1453,
+        "elapsedMs": 180
+      },
+      {
+        "username": "cc927584p15",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 15,
+        "regId": 1456,
+        "elapsedMs": 222
+      },
+      {
+        "username": "cc927584p16",
+        "code": 0,
+        "message": "ok",
+        "queueNo": 14,
+        "regId": 1455,
+        "elapsedMs": 207
+      },
+      {
+        "username": "cc927584p17",
+        "code": 409,
+        "message": "号源已挂满，请重新选择",
+        "queueNo": null,
+        "regId": null,
+        "elapsedMs": 216
+      },
+      {
+        "username": "cc927584p18",
+        "code": 409,
+        "message": "号源已挂满，请重新选择",
+        "queueNo": null,
+        "regId": null,
+        "elapsedMs": 215
+      },
+      {
+        "username": "cc927584p19",
+        "code": 409,
+        "message": "号源已挂满，请重新选择",
+        "queueNo": null,
+        "regId": null,
+        "elapsedMs": 218
+      },
+      {
+        "username": "cc927584p20",
+        "code": 409,
+        "message": "号源已挂满，请重新选择",
+        "queueNo": null,
+        "regId": null,
+        "elapsedMs": 218
+      }
+    ]
+  },
+  "errors": [],
+  "cleanup": [
+    {
+      "status": "PASS",
+      "residual": {
+        "patients": 0,
+        "users": 0,
+        "schedules": 0,
+        "registrations": 0,
+        "operationLogs": 0
+      }
+    }
+  ],
+  "passed": true
+}

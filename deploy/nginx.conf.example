@@ -1,0 +1,46 @@
+# 同源前后端分离示例：在 nginx.conf 的 http {} 中 include 本文件。
+# 将 root 改成 frontend/dist 的绝对路径；Windows 路径使用正斜杠。
+server {
+    listen 8088;
+    server_name 127.0.0.1;
+
+    root C:/Desktop/门诊挂号与就诊管理系统/frontend/dist;
+    index index.html;
+
+    # Vite 输出的带哈希资源可以长期缓存；入口 HTML 不缓存。
+    location / {
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control "no-cache";
+    }
+
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # REST：浏览器仍请求同源 /api，Nginx 转发到 Spring Boot 纯 API。
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Authorization $http_authorization;
+        proxy_read_timeout 60s;
+    }
+
+    # STOMP over WebSocket：保留 Upgrade 头，并让握手 Origin 与后端白名单一致。
+    location /ws {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header Origin http://127.0.0.1:8088;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 3600s;
+    }
+}

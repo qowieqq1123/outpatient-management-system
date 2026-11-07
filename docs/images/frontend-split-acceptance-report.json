@@ -1,0 +1,122 @@
+{
+  "architecture": "frontend-backend-separation",
+  "baseline": "PRD/RTM V1.7, SC/SD V1.7, DBD V1.3, REF V1.8, DEP V1.7, USER V1.5, DIAG V1.2, PERF V1.2, CONNECT V1.2",
+  "backend": {
+    "base": "http://127.0.0.1:8080",
+    "maven": "clean package PASS",
+    "root": "200 application/json outpatient-api",
+    "classpathStatic": "absent",
+    "publicEndpoints": [
+      "/",
+      "/api/auth/login",
+      "/api/auth/roles",
+      "/ws",
+      "/error",
+      "OPTIONS /**"
+    ],
+    "registrationEndpoints": [
+      "POST /api/registrations/{regId}/cancel",
+      "POST /api/registrations/{regId}/refund"
+    ],
+    "adminMaintenanceEndpoints": [
+      "GET/POST/PUT /api/admin/roles",
+      "GET/POST/PUT /api/admin/users",
+      "POST /api/admin/users/{userId}/status",
+      "GET /api/admin/catalog",
+      "GET/POST/PUT /api/admin/schedules",
+      "POST /api/admin/schedules/{scheduleId}/close"
+    ]
+  },
+  "frontend": {
+    "source": "frontend/",
+    "dev": "http://127.0.0.1:5173",
+    "failModeDev": "http://127.0.0.1:5174",
+    "preview": "http://127.0.0.1:4173",
+    "npmBuild": "PASS",
+    "dist": [
+      "index.html",
+      "assets/index-BB-Kpi8z.css",
+      "assets/index-BhUmcxTA.js"
+    ],
+    "proxy": "Vite /api and /ws to Spring Boot"
+  },
+  "deployment": {
+    "nginxExample": "deploy/nginx.conf.example",
+    "projectScripts": "frontend/package.json check:* and scripts/",
+    "rootReadme": "README.md"
+  },
+  "cors": {
+    "whitelistedOrigin": "http://127.0.0.1:5174 OPTIONS /api/auth/roles => 200, Access-Control-Allow-Origin=http://127.0.0.1:5174",
+    "rejectedOrigin": "http://evil.example OPTIONS /api/auth/roles => 403, no Access-Control-Allow-Origin"
+  },
+  "browser": {
+    "staticAcceptance": "PASS: ui-acceptance-report.json",
+    "dynamicAcceptance": "PASS: ui-dynamic-acceptance-report.json (UNPAID -> click -> FAILED -> RETRY, fixture reset)",
+    "registrationAcceptance": "PASS: registration-cancel-refund-report.json (cancel/refund transaction, 403/409, audit, cleanup)",
+    "adminMaintenanceAcceptance": "PASS: admin-maintenance-report.json (ADMIN-only roles/users/schedules, PBKDF2, 403/409, capacity/close, audit, SPA 1440/390px, cleanup)",
+    "connectivityAcceptance": "PASS: read-only-connectivity-report.json (six-role matrix, patient masking, ownership checks, cross-role 403, read-only)",
+    "concurrencyAcceptance": "PASS: concurrency-acceptance-report.json (20 requests / 15 slots, queue 1-15, remaining 0, Chinese 409, fixture cleanup)",
+    "adminMaintenanceScreenshots": [
+      "admin-maintenance-desktop.png",
+      "admin-maintenance-forms-desktop.png",
+      "admin-maintenance-schedules-desktop.png",
+      "admin-maintenance-mobile.png",
+      "admin-maintenance-forms-mobile.png"
+    ],
+    "jsExceptions": 0,
+    "severeLogs": 0,
+    "websocket": "实时队列已连接",
+    "insuranceFailMode": "RETRY / 结算失败 / 中文原因 / 重新结算",
+    "mobileViewports": "390px six workspaces PASS"
+  },
+  "mermaid": {
+    "blocks": 33,
+    "failed": 0
+  },
+  "diagramExportAcceptance": {
+    "passed": true,
+    "report": "mermaid-export-report.json",
+    "svgCount": 33,
+    "pngCount": 33,
+    "index": "diagrams/图集索引.md",
+    "command": "npm run check:diagrams"
+  },
+  "performanceAcceptance": {
+    "passed": true,
+    "report": "perf-50-concurrency-report.json",
+    "rounds": 3,
+    "attempts": 150,
+    "successes": 150,
+    "perRoundP95Ms": [
+      705,
+      549,
+      525
+    ],
+    "summaryP95Ms": 642,
+    "p99Ms": 719,
+    "maxMs": 732,
+    "budgetMs": 3000,
+    "throughputPerSecond": 80.5,
+    "fixtureCleanup": "PASS",
+    "command": "npm run check:perf"
+  },
+  "passed": true,
+  "websocketAcceptance": {
+    "passed": true,
+    "report": "ws-authorization-report.json",
+    "command": "npm run check:ws"
+  },
+  "auditAcceptance": {
+    "passed": true,
+    "report": "audit-integrity-report.json",
+    "requiresNew": true,
+    "postTransactionFlush": true,
+    "command": "npm run check:audit"
+  },
+  "docsBaselineAcceptance": {
+    "passed": true,
+    "report": "docs-baseline-report.json",
+    "command": "npm run check:docs"
+  },
+  "generatedAt": "2026-11-06T15:29:17.413Z"
+}

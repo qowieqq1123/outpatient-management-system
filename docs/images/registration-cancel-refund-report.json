@@ -1,0 +1,153 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "baseline": "V1.7",
+  "checks": {
+    "PATIENT_CANCEL": {
+      "regId": 1433,
+      "beforeQty": 25,
+      "result": {
+        "regId": 1433,
+        "patientId": 1,
+        "patientName": "林晓",
+        "scheduleId": 7,
+        "doctorId": 1,
+        "doctorName": "张明",
+        "deptId": 1,
+        "deptName": "内科",
+        "queueNo": 1,
+        "channel": "ONLINE",
+        "status": "CANCELLED",
+        "registrationFee": 25,
+        "regTime": "2026-11-06T23:28:30",
+        "remainingQty": 25,
+        "refundAmount": null
+      },
+      "snapshot": {
+        "status": "CANCELLED",
+        "scheduleId": 7,
+        "registrationFee": 25,
+        "remainingQty": 25,
+        "refunds": [],
+        "logs": [
+          [
+            "REGISTRATION_CANCEL",
+            "scheduleId=7,remainingQty=25\r"
+          ],
+          [
+            "REGISTRATION_BOOK",
+            "scheduleId=7,queueNo=1,channel=ONLINE"
+          ]
+        ]
+      },
+      "crossRole": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "当前角色无权访问",
+        "data": null
+      },
+      "cancelAgain": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "只有未报到的已挂号单可以取消",
+        "data": null
+      }
+    },
+    "CASHIER_REFUND": {
+      "regId": 1434,
+      "triage": {
+        "httpStatus": 200,
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "regId": 1434,
+          "patientId": 1,
+          "patientNo": "P000001",
+          "patientName": "林晓",
+          "doctorId": 1,
+          "doctorName": "张明",
+          "queueNo": 2,
+          "callOrder": 1,
+          "missCount": 0,
+          "status": "TRIAGED",
+          "triageTime": "2026-11-06T23:28:30.8956056",
+          "calledTime": null,
+          "arrivedAt": null
+        }
+      },
+      "result": {
+        "regId": 1434,
+        "patientId": 1,
+        "patientName": "林晓",
+        "scheduleId": 7,
+        "doctorId": 1,
+        "doctorName": "张明",
+        "deptId": 1,
+        "deptName": "内科",
+        "queueNo": 2,
+        "channel": "ONLINE",
+        "status": "REFUNDED",
+        "registrationFee": 25,
+        "regTime": "2026-11-06T23:28:31",
+        "remainingQty": 25,
+        "refundAmount": 25
+      },
+      "snapshot": {
+        "status": "REFUNDED",
+        "scheduleId": 7,
+        "registrationFee": 25,
+        "remainingQty": 25,
+        "refunds": [
+          [
+            "13",
+            "25.00"
+          ]
+        ],
+        "logs": [
+          [
+            "REGISTRATION_REFUND",
+            "amount=25.00,remainingQty=25,reason=收费台办理退号退费\r"
+          ],
+          [
+            "REGISTRATION_BOOK",
+            "scheduleId=7,queueNo=2,channel=ONLINE"
+          ]
+        ]
+      },
+      "patientCannotRefund": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "当前角色无权访问",
+        "data": null
+      },
+      "refundAgain": {
+        "httpStatus": 200,
+        "code": 409,
+        "message": "已就诊、已过号或已结束的挂号单不能退号",
+        "data": null
+      }
+    },
+    "VISITED_REJECTED": {
+      "httpStatus": 200,
+      "code": 409,
+      "message": "已就诊、已过号或已结束的挂号单不能退号",
+      "data": null
+    },
+    "AUDIT_READ": {
+      "code": 0,
+      "rows": 0
+    }
+  },
+  "errors": [],
+  "cleanup": [
+    {
+      "regIds": [
+        1433,
+        1434
+      ],
+      "scheduleId": 7,
+      "remainingQty": 25,
+      "status": "PASS"
+    }
+  ],
+  "passed": true
+}

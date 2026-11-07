@@ -1,0 +1,129 @@
+{
+  "scenario": "AC-30 / 文档、报告与脚本基线一致性",
+  "baseline": "V1.7",
+  "generatedAt": "2026-11-06T15:34:05.637Z",
+  "files": [
+    {
+      "file": "docs/00-文档索引与编写规范.md",
+      "bytes": 11056
+    },
+    {
+      "file": "docs/01-产品需求文档PRD.md",
+      "bytes": 43101
+    },
+    {
+      "file": "docs/02-概要设计说明书-SC结构图.md",
+      "bytes": 33020
+    },
+    {
+      "file": "docs/03-详细设计说明书-SD时序图与状态图.md",
+      "bytes": 45852
+    },
+    {
+      "file": "docs/04-数据库设计说明书.md",
+      "bytes": 19909
+    },
+    {
+      "file": "docs/05-需求追溯矩阵.md",
+      "bytes": 33992
+    },
+    {
+      "file": "docs/06-GitHub借鉴与选型说明.md",
+      "bytes": 21198
+    },
+    {
+      "file": "docs/07-前后端分离架构与部署说明.md",
+      "bytes": 11900
+    },
+    {
+      "file": "docs/08-用户手册.md",
+      "bytes": 10770
+    },
+    {
+      "file": "docs/09-图集导出与演示记录.md",
+      "bytes": 5838
+    },
+    {
+      "file": "docs/10-50并发性能压测说明.md",
+      "bytes": 6885
+    },
+    {
+      "file": "docs/11-业务连通性与真实功能审计.md",
+      "bytes": 7199
+    },
+    {
+      "file": "README.md",
+      "bytes": 5309
+    },
+    {
+      "file": "docs/images/diagrams/图集索引.md",
+      "bytes": 8890
+    },
+    {
+      "file": "frontend/package.json",
+      "bytes": 1143
+    },
+    {
+      "file": "frontend/src/main.js",
+      "bytes": 102161
+    }
+  ],
+  "checks": {
+    "diagramAssets": {
+      "svgCount": 33,
+      "pngCount": 33
+    },
+    "reports": {
+      "ui-acceptance-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "ui-dynamic-acceptance-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "frontend-split-acceptance-report.json": {
+        "passed": true,
+        "baseline": "PRD/RTM V1.7, SC/SD V1.7, DBD V1.3, REF V1.8, DEP V1.7, USER V1.5, DIAG V1.2, PERF V1.2, CONNECT V1.2"
+      },
+      "registration-cancel-refund-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "admin-maintenance-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "read-only-connectivity-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "concurrency-acceptance-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "perf-50-concurrency-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "mermaid-export-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "ws-authorization-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "audit-integrity-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      },
+      "docs-baseline-report.json": {
+        "passed": true,
+        "baseline": "V1.7"
+      }
+    }
+  },
+  "errors": [],
+  "passed": true
+}

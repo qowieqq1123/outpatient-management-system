@@ -1,0 +1,32 @@
+# Java / Maven
+**/target/
+*.class
+
+# Vite / Node
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.local.ps1
+application-local.yml
+
+# Runtime output and database backups
+*.log
+logs/
+runtime-*/
+*.dump
+*.bak
+*.sql.gz
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

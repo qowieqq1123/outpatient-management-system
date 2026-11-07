@@ -1,0 +1,27 @@
+{
+  "name": "outpatient-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "门诊挂号与就诊管理系统独立 SPA",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check:ui": "node ../scripts/ui-acceptance.mjs",
+    "check:dynamic": "node ../scripts/ui-dynamic-acceptance.mjs",
+    "check:registration": "node ../scripts/registration-cancel-refund-check.mjs",
+    "check:connectivity": "node ../scripts/read-only-connectivity-audit.mjs",
+    "check:admin": "node ../scripts/admin-maintenance-check.mjs",
+    "check:concurrency": "node ../scripts/concurrency-acceptance.mjs",
+    "check:perf": "node ../scripts/perf-50-concurrency.mjs",
+    "check:ws": "node ../scripts/ws-authorization-check.mjs",
+    "check:audit": "node ../scripts/audit-integrity-check.mjs",
+    "check:docs": "node ../scripts/docs-baseline-check.mjs",
+    "check:mermaid": "node ../scripts/validate-mermaid-browser.mjs",
+    "check:diagrams": "node ../scripts/export-mermaid-diagrams.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

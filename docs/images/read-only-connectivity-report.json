@@ -1,0 +1,367 @@
+{
+  "generatedAt": "2026-11-06T15:28:43.659Z",
+  "baseline": "V1.7",
+  "checks": {
+    "loginViaSpa": {
+      "httpStatus": 200,
+      "code": 0,
+      "message": "ok",
+      "role": "ADMIN",
+      "username": "admin01"
+    },
+    "matrix": {
+      "PATIENT": [
+        {
+          "path": "/api/schedules",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 10
+        },
+        {
+          "path": "/api/registrations/mine?patientId=1",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 2
+        },
+        {
+          "path": "/api/visits/mine",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 1
+        },
+        {
+          "path": "/api/bills/mine",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 1
+        },
+        {
+          "path": "/api/queue/board?doctorId=1&workDate=2026-11-05",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 3
+        }
+      ],
+      "NURSE": [
+        {
+          "path": "/api/schedules",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 10
+        },
+        {
+          "path": "/api/registrations/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 7
+        },
+        {
+          "path": "/api/queue/board?doctorId=1&workDate=2026-11-05",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 3
+        }
+      ],
+      "DOCTOR": [
+        {
+          "path": "/api/queue/board?doctorId=1&workDate=2026-11-05",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 3
+        },
+        {
+          "path": "/api/registrations/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 7
+        },
+        {
+          "path": "/api/visits/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 2
+        },
+        {
+          "path": "/api/pharmacy/medicines",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 12
+        },
+        {
+          "path": "/api/prescriptions/checkup-catalog",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 8
+        },
+        {
+          "path": "/api/prescriptions/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 1
+        }
+      ],
+      "CASHIER": [
+        {
+          "path": "/api/visits/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 2
+        },
+        {
+          "path": "/api/bills/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 3
+        },
+        {
+          "path": "/api/registrations/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 7
+        },
+        {
+          "path": "/api/stats/revenue?start=2020-01-01T00:00:00&end=2030-12-31T23:59:59",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": null
+        }
+      ],
+      "PHARMACIST": [
+        {
+          "path": "/api/prescriptions/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 2
+        },
+        {
+          "path": "/api/pharmacy/medicines?keyword=",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 12
+        }
+      ],
+      "ADMIN": [
+        {
+          "path": "/api/stats/workload?start=2020-01-01T00:00:00&end=2030-12-31T23:59:59",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 2
+        },
+        {
+          "path": "/api/stats/revenue?start=2020-01-01T00:00:00&end=2030-12-31T23:59:59",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": null
+        },
+        {
+          "path": "/api/audit?start=2020-01-01T00:00:00&end=2030-12-31T23:59:59",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 84
+        },
+        {
+          "path": "/api/registrations/workbench?status=ALL",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 7
+        },
+        {
+          "path": "/api/admin/roles",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 6
+        },
+        {
+          "path": "/api/admin/users",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 15
+        },
+        {
+          "path": "/api/admin/schedules",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": 10
+        },
+        {
+          "path": "/api/admin/catalog",
+          "ok": true,
+          "httpStatus": 200,
+          "code": 0,
+          "message": "ok",
+          "rows": null
+        }
+      ]
+    },
+    "security": {
+      "otherPatientBillDetail": {
+        "httpStatus": 200,
+        "code": 403
+      },
+      "otherPatientVisitDetail": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "无权查看该就诊记录"
+      },
+      "otherPatientPrescriptions": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "无权查看其他患者的处方"
+      },
+      "otherPatientQueueBoard": {
+        "httpStatus": 200,
+        "code": 0,
+        "rowCount": 3,
+        "rows": [
+          {
+            "patientId": null,
+            "patientNo": null,
+            "patientName": null,
+            "status": "TRIAGED"
+          },
+          {
+            "patientId": null,
+            "patientNo": null,
+            "patientName": null,
+            "status": "REGISTERED"
+          },
+          {
+            "patientId": 2,
+            "patientNo": "P000002",
+            "patientName": "陈立",
+            "status": "TRIAGED"
+          }
+        ]
+      },
+      "adminBillDetail": {
+        "httpStatus": 200,
+        "code": 0,
+        "patientId": 1
+      },
+      "patientBoardNoQueueDate": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "只能查看本人当日挂号对应的叫号队列",
+        "data": null
+      },
+      "patientWithoutRegistrationBoard": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "只能查看本人当日挂号对应的叫号队列",
+        "data": null
+      },
+      "otherDoctorBoard": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "只能查看自己接诊的队列",
+        "data": null
+      },
+      "ownDoctorBoard": {
+        "httpStatus": 200,
+        "code": 0,
+        "rows": 1
+      },
+      "patientAdminRoles": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "当前角色无权访问",
+        "data": null
+      },
+      "nurseBillsPrice": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "当前角色无权访问",
+        "data": null
+      },
+      "cashierQueueReport": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "当前角色无权访问",
+        "data": null
+      },
+      "otherDoctorArrive": {
+        "httpStatus": 200,
+        "code": 403,
+        "message": "只能确认自己接诊的叫号",
+        "data": null
+      },
+      "doctorWorkload": {
+        "httpStatus": 200,
+        "code": 0,
+        "doctorIds": [
+          1
+        ]
+      },
+      "otherDoctorWorkload": {
+        "httpStatus": 200,
+        "code": 0,
+        "doctorIds": [
+          2
+        ]
+      }
+    },
+    "demoData": {
+      "activeCalling": 0,
+      "boardDate": "2026-11-05",
+      "bill1PatientId": 1,
+      "visit1PatientId": 1
+    }
+  },
+  "findings": [],
+  "errors": [],
+  "passed": true
+}
